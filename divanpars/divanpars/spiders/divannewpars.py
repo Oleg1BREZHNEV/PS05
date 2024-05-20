@@ -4,13 +4,13 @@ import scrapy
 class DivannewparsSpider(scrapy.Spider):
     name = "divannewpars"
     allowed_domains = ["https://www.divan.ru"]
-    start_urls = ["https://www.divan.ru/category/divany-i-kresla"]
+    start_urls = ["https://www.divan.ru/category/svetilniki"]
 
     def parse(self, response):
 
         # Создаём переменную, в которую будет сохраняться информация
         # Пишем ту же команду, которую писали в терминале
-        divans = response.css('div._Ud0k')
+        divans = response.css("div.LlPhw")
         # Настраиваем работу с каждым отдельным диваном в списке
         for divan in divans:
             # Используем новый для нас оператор "yield", который помогает обрабатывать одно отдельное действие
